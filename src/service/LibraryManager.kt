@@ -10,7 +10,6 @@ class LibraryManager {
     private var books = Books().datas;
     private val members = Members().datas
 
-
     public fun borrowBook(bookId: Int?, memberId: Int?) {
         try {
             val member = members.find { it.id == memberId }
@@ -25,8 +24,10 @@ class LibraryManager {
                         return;
                     }
 
+                    println(books[bookIndex].status)
                     books[bookIndex].status = Status.Borrowed.toString()
                     println("Book $bookId successfully borrowed!")
+                    println(books[bookIndex].status)
                     return;
                 }
             }
