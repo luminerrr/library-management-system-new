@@ -2,5 +2,8 @@ package entity
 
 import constant.MembershipType
 
-class Member (id: Int, name: String, membershipType: String = MembershipType.Standard.toString()){
+class Member (
+    var id: Int,
+    var name: String,
+    var membershipType: String = MembershipType.Standard.toString()){
 }
