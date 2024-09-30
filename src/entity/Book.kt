@@ -2,6 +2,11 @@ package entity
 
 import constant.Status
 
-class Book (id: Int, title: String, author: String, genre: String?, status: String = Status.Available.toString() ){
+class Book (
+    var id: Int,
+    var title: String,
+    var author: String,
+    var genre: String?,
+    var status: String = Status.Available.toString() ){
 
 }
