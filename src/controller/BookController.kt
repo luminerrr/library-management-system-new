@@ -3,7 +3,7 @@ package controller
 import entity.Book
 import service.LibraryManager
 
-class AddBook(private val service: LibraryManager) {
+class BookController(private val service: LibraryManager) {
     fun handleBookInput() {
         val newId = (service.getBooks().lastOrNull()?.id ?: 0) + 1
 
