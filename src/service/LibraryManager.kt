@@ -92,4 +92,9 @@ class LibraryManager {
             println("id $memberId not found")
         }
     }
+
+    fun getBooks(): List<Book> {
+        return books
+    }
+
 }
