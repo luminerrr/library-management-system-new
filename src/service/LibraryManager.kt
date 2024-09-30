@@ -11,14 +11,13 @@ class LibraryManager {
     private val members = Members().datas
 
 
-    public fun borrowBook(bookIdString: String, memberId: Int) {
+    public fun borrowBook(bookId: Int?, memberId: Int?) {
         try {
             val member = members.find { it.id == memberId }
             if (member == null) {
                 println("Member not found!")
                 return;
             }
-            val bookId = bookIdString.toInt()
             for (bookIndex: Int in books.indices) {
                 if (books[bookIndex].id == bookId) {
                     if (books[bookIndex].status != Status.Available.toString()) {
@@ -37,14 +36,13 @@ class LibraryManager {
         }
     }
 
-    public fun returnBook(bookIdString: String, memberId: Int) {
+    public fun returnBook(bookId: Int?, memberId: Int?) {
         try {
             val member = members.find { it.id == memberId }
             if (member == null) {
                 println("Member not found!")
                 return;
             }
-            val bookId = bookIdString.toInt()
             for (bookIndex: Int in books.indices) {
                 if (books[bookIndex].id == bookId) {
                     if (books[bookIndex].status != Status.Borrowed.toString()) {
