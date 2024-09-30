@@ -10,5 +10,6 @@ class Books() {
         Book(3, "Third Book", "Adventure", "Third Author", Status.Available.toString()),
         Book(4, "Fourth Book", "Adventure", "Fourth Author", Status.Available.toString()),
         Book(5, "Fifth Book", "Adventure", "Fifth Author", Status.Available.toString()),
+        Book(6, "Sixth Book", "Horror", "Sixth Author", Status.Borrowed.toString()),
     )
 }

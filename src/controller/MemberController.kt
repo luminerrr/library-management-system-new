@@ -4,13 +4,13 @@ import data.Members
 import entity.Member
 import service.LibraryManager
 
-class MemberController {
-    private val LibraryService = LibraryManager();
-    private val members = Members().datas
+class MemberController (private val LibraryService: LibraryManager) {
+//    private val LibraryService = LibraryManager();
+//    private val members = Members().datas
 
     public fun addMember(){
         var memberText : String
-        val newId = members.last().id + 1
+        val newId = LibraryService.getMember().last().id + 1
         println("Please enter your name")
         val memberName = readLine().toString()
         println("Please enter your membership type 1/2 :")
