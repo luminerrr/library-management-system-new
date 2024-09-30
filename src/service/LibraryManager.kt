@@ -78,6 +78,20 @@ class LibraryManager {
         }
     }
 
+    fun listAvailableBooks() {
+        val availableBooks = books.filter { it.status == Status.Available.toString() }
+
+        if (availableBooks.isEmpty()) {
+            println("No available books in the library.")
+        } else {
+            println("Available books in the library:")
+            for (book in availableBooks) {
+                println("ID: ${book.id}, Title: ${book.title}, Author: ${book.author}, Genre: ${book.genre}, Status: ${book.status}")
+            }
+        }
+    }
+
+
     fun addMember(member: Member) {
         members.add(member)
         println("member added")
@@ -98,6 +112,10 @@ class LibraryManager {
 
     fun getBooks(): List<Book> {
         return books
+    }
+
+    fun getMember(): List<Member> {
+        return members
     }
 
 }

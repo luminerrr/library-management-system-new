@@ -2,8 +2,8 @@ package controller
 
 import service.LibraryManager
 
-class BorrowController {
-    private val libraryService = LibraryManager();
+class BorrowController (private val libraryService: LibraryManager) {
+//    private val libraryService = LibraryManager();
 
     public fun borrowBook() {
         println("Please enter your member id")
