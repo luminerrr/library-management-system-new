@@ -79,11 +79,13 @@ class LibraryManager {
 
     fun addMember(member: Member) {
         members.add(member)
-        println(member.name)
         println("member added")
+        println("  ${member.id}")
+        println("  ${member.name}")
+        println("  ${member.membershipType}")
     }
 
-    fun removeMember(memberId: Int) {
+    fun removeMember(memberId: Int?) {
         val member = members.find { it.id == memberId }
         if (member != null) {
             members.remove(member)
